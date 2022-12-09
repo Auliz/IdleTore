@@ -1,11 +1,16 @@
-class Player():
+from classes.inventory import Inventory as inv
+
+
+class Player(inv):
   """
-  Overall Player class
+  Overall Player class inherits from inventory
   """
-  def __init__(self) -> None:
+
+  def __init__(self, username) -> None:
+    super().__init__(copper=0, tin=0, iron=0, coal=0, bronzeBar=0, ironBar=0, steelBar=0)
     self.miningLvl = 1
     self.smithingLvl = 1
-    self.username = ''
+    self.username = username
 
   def setName(self, name):
     """
